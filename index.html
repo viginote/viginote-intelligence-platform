@@ -1,76 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VigiNote Tiered Intelligence Subscriptions</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIGINOTE — Geopolitical Intelligence</title>
+  <meta name="description" content="Viginote delivers bespoke geopolitical intelligence, risk analysis, and travel security advisory for corporations and high-value individuals operating in complex global environments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink:       #0C1018;
+      --ink-2:     #111620;
+      --charcoal:  #1C2333;
+      --surface:   #232C3D;
+      --paper:     #D8DDE6;
+      --mist:      #8A96A8;
+      --steel:     #4E5D72;
+      --wire:      #2E3A4E;
+      --blue:      #3B8BC4;
+      --blue-2:    #5BA8DA;
+      --blue-dim:  #2A6494;
+      --blue-pale: rgba(59,139,196,0.12);
+      --risk-high: #B03030;
+      --risk-med:  #B07020;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Barlow Condensed', sans-serif;
+      --body:  'Barlow', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color: var(--paper); font-family: var(--body); font-weight: 300; line-height: 1.65; overflow-x: hidden; }
+    body::before { content:''; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:0.016; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:128px; }
+
+    /* NAV */
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:12px 60px; border-bottom:1px solid rgba(59,139,196,0.1); background:rgba(12,16,24,0.93); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+    .nav-logo { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    .nav-logo-img { height:44px; width:44px; object-fit:contain; }
+    .nav-wordmark { font-family:var(--sans); font-size:16px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--paper); }
+    .nav-wordmark span { color:var(--blue-2); }
+    .nav-links { display:flex; gap:38px; list-style:none; }
+    .nav-links a { font-family:var(--sans); font-size:12px; font-weight:500; letter-spacing:2.5px; text-transform:uppercase; color:var(--mist); text-decoration:none; transition:color .2s; }
+    .nav-links a:hover { color:var(--blue-2); }
+    .nav-cta { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--blue-2); text-decoration:none; padding:9px 22px; border:1px solid rgba(91,168,218,0.4); transition:all .25s; }
+    .nav-cta:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+
+    /* HERO */
+    .hero { background-image: url("hero-1.jpg"); background-size: cover; background-position: center right; background-repeat: no-repeat; min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:140px 60px 100px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(59,139,196,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(59,139,196,0.05) 1px,transparent 1px); background-size:64px 64px; animation:gridDrift 40s linear infinite; }
+    @keyframes gridDrift { 0%{transform:translateY(0)} 100%{transform:translateY(64px)} }
+    .hero-glow { position:absolute; top:-20%; right:-5%; width:680px; height:680px; border-radius:50%; background:radial-gradient(circle,rgba(59,139,196,0.08) 0%,transparent 65%); pointer-events:none; }
+    .hero-watermark { position:absolute; right:-60px; bottom:-60px; width:460px; height:460px; opacity:0.04; pointer-events:none; object-fit:contain; }
+    .hero-content { position:relative; z-index:1; max-width:860px; }
+    .hero-eyebrow { display:flex; align-items:center; gap:16px; margin-bottom:32px; animation:fadeUp .8s ease both; }
+    .hero-eyebrow-line { width:44px; height:1px; background:var(--blue); }
+    .hero-eyebrow-text { font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:4px; text-transform:uppercase; color:var(--blue-2); }
+    h1.hero-title { font-family:var(--serif); font-size:clamp(3.2rem,6.5vw,6rem); font-weight:300; line-height:1.06; color:var(--paper); margin-bottom:28px; animation:fadeUp .8s .1s ease both; }
+    h1.hero-title em { font-style:italic; color:var(--blue-2); }
+    .hero-sub { font-size:1.02rem; font-weight:300; color:var(--mist); max-width:540px; line-height:1.82; margin-bottom:52px; animation:fadeUp .8s .2s ease both; }
+    .hero-actions { display:flex; align-items:center; gap:32px; animation:fadeUp .8s .3s ease both; }
+    .btn-primary { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:2.5px; text-transform:uppercase; color:#fff; background:var(--blue); padding:16px 40px; text-decoration:none; transition:all .25s; }
+    .btn-primary:hover { background:var(--blue-2); transform:translateY(-1px); }
+    .btn-ghost { font-family:var(--sans); font-size:12px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--mist); text-decoration:none; display:flex; align-items:center; gap:10px; transition:color .2s; }
+    .btn-ghost::after { content:'→'; font-size:14px; }
+    .btn-ghost:hover { color:var(--blue-2); }
+    .hero-scroll { position:absolute; bottom:44px; left:60px; display:flex; align-items:center; gap:14px; animation:fadeUp 1s .6s ease both; }
+    .scroll-bar { width:1px; height:50px; background:linear-gradient(to bottom,var(--blue),transparent); animation:pulse 2.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+    .scroll-text { font-family:var(--sans); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--steel); writing-mode:vertical-lr; transform:rotate(180deg); }
+    .hero-hud { position:absolute; bottom:44px; right:60px; text-align:right; animation:fadeUp 1s .5s ease both; }
+    .hud-line { font-family:var(--sans); font-size:10px; letter-spacing:2px; color:var(--steel); line-height:2; }
+    .hud-line strong { color:var(--blue); font-weight:500; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+    /* DIVIDER */
+    .sec-divider { display:flex; align-items:center; gap:20px; padding:0 60px; margin-bottom:0; }
+    .sd-line { flex:1; height:1px; background:rgba(59,139,196,0.1); }
+    .sd-icon { width:28px; height:28px; opacity:.18; object-fit:contain; }
+
+    /* SECTIONS */
+    .section { padding:100px 60px; }
+    .section--mid { background:var(--ink-2); }
+    .section--surf { background:var(--charcoal); }
+    .section--light { background:#E8ECF2; color:var(--ink); }
+    .section-label { font-family:var(--sans); font-size:10px; font-weight:600; letter-spacing:4px; text-transform:uppercase; color:var(--blue); margin-bottom:14px; display:flex; align-items:center; gap:14px; }
+    .section-label::before { content:''; display:block; width:30px; height:1px; background:var(--blue); }
+    .section-title { font-family:var(--serif); font-size:clamp(2rem,3.8vw,3rem); font-weight:300; line-height:1.2; margin-bottom:20px; }
+    .section-title em { font-style:italic; color:var(--blue-2); }
+    .section--light .section-label { color:var(--blue-dim); }
+    .section--light .section-label::before { background:var(--blue-dim); }
+    .section--light .section-title { color:var(--ink); }
+    .section--light .section-title em { color:var(--blue); }
+
+    /* MANDATE */
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; margin-top:56px; align-items:start; }
+    .about-body { font-size:.97rem; font-weight:300; color:var(--mist); line-height:1.88; }
+    .about-body p+p { margin-top:18px; }
+    .pillar { padding:26px 0; border-bottom:1px solid rgba(59,139,196,.1); display:flex; gap:22px; }
+    .pillar:first-child { border-top:1px solid rgba(59,139,196,.1); }
+    .pillar-num { font-family:var(--sans); font-size:10px; font-weight:600; letter-spacing:2px; color:var(--blue); padding-top:3px; flex-shrink:0; width:26px; }
+    .pillar-title { font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--paper); margin-bottom:5px; }
+    .pillar-desc { font-size:.86rem; color:var(--steel); line-height:1.7; }
+
+    /* SERVICES */
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:56px; }
+    .service-card { background:rgba(255,255,255,.02); padding:44px 32px; position:relative; overflow:hidden; transition:background .3s; }
+    .service-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:2px; background:var(--blue); transform:scaleX(0); transform-origin:left; transition:transform .4s ease; }
+    .service-card:hover::before { transform:scaleX(1); }
+    .service-card:hover { background:rgba(59,139,196,.05); }
+    .service-idx { font-family:var(--sans); font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-bottom:26px; opacity:.7; }
+    .service-title { font-family:var(--serif); font-size:1.45rem; font-weight:400; color:var(--paper); line-height:1.25; margin-bottom:14px; }
+    .service-desc { font-size:.87rem; color:var(--steel); line-height:1.76; }
+
+    /* ARTICLE CARD */
+    .articles-intro { max-width:640px; margin-bottom:56px; }
+    .articles-intro p { font-size:.94rem; color:var(--mist); line-height:1.82; margin-top:16px; }
+    .article-card { background:var(--ink-2); border:1px solid rgba(59,139,196,.15); max-width:840px; margin:0 auto; }
+    .article-header { background:var(--ink); border-bottom:1px solid rgba(59,139,196,.1); padding:22px 36px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .article-org { display:flex; align-items:center; gap:14px; }
+    .article-logo-img { width:50px; height:50px; object-fit:contain; }
+    .article-org-name { font-family:var(--sans); font-size:14px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue-2); line-height:1; }
+    .article-org-sub { font-family:var(--sans); font-size:9px; letter-spacing:2px; color:var(--steel); text-transform:uppercase; margin-top:4px; }
+    .article-meta-right { text-align:right; }
+    .article-ref { font-family:var(--sans); font-size:9px; letter-spacing:2px; color:var(--steel); text-transform:uppercase; line-height:1.9; }
+    .article-ref strong { color:var(--blue); font-weight:500; }
+    .article-class-bar { background:var(--blue); padding:5px 36px; display:flex; align-items:center; justify-content:space-between; }
+    .class-text { font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#fff; }
+    .class-dots { display:flex; gap:5px; }
+    .cdot { width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.3); }
+    .cdot.on { background:rgba(255,255,255,.9); }
+    .article-body { padding:40px 36px 36px; }
+    .art-type { font-family:var(--sans); font-size:10px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+    .art-type::before { content:''; width:22px; height:1px; background:var(--blue); }
+    .art-headline { font-family:var(--serif); font-size:1.95rem; font-weight:500; color:var(--paper); line-height:1.2; margin-bottom:10px; }
+    .art-deck { font-family:var(--serif); font-size:1.05rem; font-weight:300; font-style:italic; color:var(--mist); line-height:1.6; margin-bottom:28px; padding-bottom:24px; border-bottom:1px solid rgba(59,139,196,.1); }
+    .art-byline { display:flex; align-items:center; gap:18px; margin-bottom:32px; }
+    .byline-avatar { width:38px; height:38px; border-radius:50%; background:var(--surface); border:1px solid rgba(59,139,196,.3); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:14px; color:var(--blue-2); flex-shrink:0; }
+    .byline-name { font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:1.5px; color:var(--paper); text-transform:uppercase; }
+    .byline-role { font-size:.8rem; color:var(--steel); margin-top:2px; }
+    .byline-date { margin-left:auto; font-family:var(--sans); font-size:10px; letter-spacing:2px; color:var(--steel); text-transform:uppercase; }
+    .key-j { background:rgba(59,139,196,.07); border-left:3px solid var(--blue); padding:18px 22px; margin-bottom:28px; }
+    .kj-label { font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-bottom:7px; }
+    .kj-text { font-family:var(--serif); font-size:1.02rem; color:var(--paper); line-height:1.62; }
+    .risk-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:26px 0; }
+    .risk-cell { background:rgba(255,255,255,.025); padding:16px; border-top:2px solid; text-align:center; }
+    .risk-cell.h { border-color:var(--risk-high); }
+    .risk-cell.m { border-color:var(--risk-med); }
+    .risk-cell.e { border-color:#5080B0; }
+    .rlabel { font-family:var(--sans); font-size:8px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--steel); margin-bottom:5px; }
+    .rval { font-family:var(--serif); font-size:.95rem; color:var(--paper); }
+    .rlvl { font-family:var(--sans); font-size:8px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-top:5px; }
+    .risk-cell.h .rlvl { color:#D05050; }
+    .risk-cell.m .rlvl { color:#D0A050; }
+    .risk-cell.e .rlvl { color:var(--blue-2); }
+    .art-subhead { font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--paper); margin:28px 0 10px; padding-bottom:8px; border-bottom:1px solid rgba(59,139,196,.1); }
+    .art-text { font-size:.91rem; color:var(--mist); line-height:1.86; }
+    .art-text p+p { margin-top:14px; }
+    .art-text strong { color:var(--paper); font-weight:500; }
+    .art-sources { margin-top:28px; padding-top:18px; border-top:1px solid rgba(59,139,196,.08); font-family:var(--sans); font-size:9px; letter-spacing:1.8px; color:var(--wire); text-transform:uppercase; line-height:2; }
+    .art-sources strong { color:var(--steel); }
+    .art-footer { background:rgba(59,139,196,.05); border-top:1px solid rgba(59,139,196,.12); padding:14px 36px; display:flex; align-items:center; justify-content:space-between; }
+    .art-footer-disc { font-family:var(--sans); font-size:8.5px; letter-spacing:1.5px; color:var(--wire); text-transform:uppercase; }
+    .art-footer-logo { display:flex; align-items:center; gap:8px; }
+    .art-footer-logo img { width:22px; height:22px; object-fit:contain; opacity:.35; }
+    .art-footer-wordmark { font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue); opacity:.4; }
+
+    /* WHY VIGINOTE */
+    .mandate-cols { display:grid; grid-template-columns:1.2fr 1fr; gap:80px; margin-top:56px; align-items:start; }
+    .mandate-text { font-size:.97rem; color:#3A4A5A; line-height:1.88; }
+    .mandate-text p+p { margin-top:18px; }
+    .fact { padding:22px 0; border-bottom:1px solid rgba(44,58,77,.15); }
+    .fact:first-child { border-top:1px solid rgba(44,58,77,.15); }
+    .fact-num { font-family:var(--serif); font-size:2.4rem; font-weight:300; color:var(--blue); line-height:1; margin-bottom:4px; }
+    .fact-label { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#3A4A5A; }
+
+    /* CONTACT */
+    .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; margin-top:56px; align-items:start; }
+    .contact-statement { font-family:var(--serif); font-size:1.55rem; font-weight:300; line-height:1.48; color:var(--paper); margin-bottom:28px; }
+    .contact-statement em { color:var(--blue-2); font-style:italic; }
+    .contact-body { font-size:.9rem; color:var(--steel); line-height:1.8; margin-bottom:36px; }
+    .contact-email { font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:2px; color:var(--blue-2); text-decoration:none; display:flex; align-items:center; gap:12px; border-bottom:1px solid rgba(91,168,218,.3); padding-bottom:14px; transition:color .2s; }
+    .contact-email:hover { color:var(--blue); }
+    .contact-meta { font-family:var(--sans); font-size:10px; letter-spacing:2.5px; color:var(--steel); text-transform:uppercase; line-height:2.3; margin-top:30px; }
+    .contact-form { background:rgba(255,255,255,.025); padding:36px; border:1px solid rgba(59,139,196,.1); }
+    .f-label { font-family:var(--sans); font-size:9px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue); display:block; margin-bottom:8px; }
+    .f-input,.f-select,.f-textarea { width:100%; background:rgba(255,255,255,.04); border:1px solid rgba(59,139,196,.12); padding:13px 15px; font-family:var(--body); font-size:.87rem; color:var(--paper); outline:none; margin-bottom:18px; transition:border-color .2s; }
+    .f-input:focus,.f-select:focus,.f-textarea:focus { border-color:rgba(59,139,196,.5); }
+    .f-select option { background:var(--ink-2); }
+    .f-textarea { height:96px; resize:vertical; }
+    .f-btn { font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:#fff; background:var(--blue); border:none; padding:15px 36px; cursor:pointer; width:100%; transition:background .2s; }
+    .f-btn:hover { background:var(--blue-2); }
+    .f-note { font-size:.75rem; color:var(--wire); margin-top:10px; text-align:center; }
+
+    /* FOOTER */
+    footer { background:#080B10; padding:56px 60px 36px; border-top:1px solid rgba(59,139,196,.07); }
+    .footer-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:44px; padding-bottom:44px; border-bottom:1px solid rgba(59,139,196,.07); }
+    .footer-brand { display:flex; flex-direction:column; gap:16px; }
+    .footer-logo-wrap { display:flex; align-items:center; gap:14px; }
+    .footer-logo-img { height:40px; width:40px; object-fit:contain; }
+    .footer-wordmark { font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--steel); }
+    .footer-tagline { font-family:var(--serif); font-size:1rem; font-weight:300; font-style:italic; color:var(--wire); max-width:320px; line-height:1.65; }
+    .footer-links { display:flex; gap:52px; }
+    .footer-col-title { font-family:var(--sans); font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--blue); margin-bottom:18px; }
+    .footer-col ul { list-style:none; }
+    .footer-col li { margin-bottom:11px; }
+    .footer-col a { font-size:.85rem; color:var(--steel); text-decoration:none; transition:color .2s; }
+    .footer-col a:hover { color:var(--mist); }
+    .footer-bottom { display:flex; justify-content:space-between; align-items:center; }
+    .footer-copy { font-family:var(--sans); font-size:10px; letter-spacing:2px; color:var(--wire); text-transform:uppercase; }
+    .footer-legal { font-size:.74rem; color:var(--wire); max-width:480px; text-align:right; line-height:1.6; }
+
+    /* RESPONSIVE */
+    @media (max-width:920px) {
+      nav { padding:14px 24px; }
+      .nav-links { display:none; }
+      .hero { background-image: url("hero-1.jpg"); background-size: cover; background-position: center right; background-repeat: no-repeat; padding:120px 24px 80px; }
+      .hero-scroll,.hero-hud,.hero-watermark { display:none; }
+      .section { padding:72px 24px; }
+      .sec-divider { padding:0 24px; }
+      .about-grid,.services-grid,.mandate-cols,.contact-inner { grid-template-columns:1fr; gap:40px; }
+      .risk-row { grid-template-columns:1fr; }
+      .article-header { flex-direction:column; align-items:flex-start; gap:16px; }
+      .article-body { padding:28px 20px 24px; }
+      .art-footer { flex-direction:column; gap:8px; }
+      footer { padding:48px 24px 32px; }
+      .footer-top { flex-direction:column; gap:40px; }
+      .footer-links { flex-wrap:wrap; gap:32px; }
+      .footer-bottom { flex-direction:column; gap:16px; }
+      .footer-legal { text-align:center; }
+    }
+  </style>
 </head>
 <body>
 
-    <section class="pricing-section">
-        <div class="header-text">
-            <h2>Global Intelligence Subscriptions</h2>
-            <p>Select the tier that aligns with your operational risk requirements and decision-making speed.</p>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img class="nav-logo-img" src="viginote-logo.png" alt="Viginote logo" />
+    <span class="nav-wordmark">VIGINO<span>TE</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#mandate">Mandate</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#intelligence">Intelligence</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Request a Brief</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <img class="hero-watermark" src="viginote-logo.png" alt="" />
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Open-Source Geopolitical Intelligence</span>
+    </div>
+    <h1 class="hero-title">Clarity in<br/><em>Complex Terrain.</em></h1>
+    <p class="hero-sub">Viginote delivers bespoke intelligence products for corporations, executives, and institutions operating across volatile global environments — from strategic risk assessments to real-time travel security advisories.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Commission a Report</a>
+      <a href="#services" class="btn-ghost">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-bar"></div><span class="scroll-text">Scroll</span></div>
+  <div class="hero-hud">
+    <div class="hud-line"><strong>STATUS</strong> · OPERATIONAL</div>
+    <div class="hud-line"><strong>FOCUS</strong> · EMEA · MENA · SADC</div>
+    <div class="hud-line"><strong>CYCLE</strong> · MAY 2026</div>
+  </div>
+</section>
+
+<div class="sec-divider"><div class="sd-line"></div><img class="sd-icon" src="viginote-logo.png" alt="" /><div class="sd-line"></div></div>
+
+<!-- MANDATE -->
+<section class="section section--mid" id="mandate">
+  <div class="section-label">Our Mandate</div>
+  <h2 class="section-title">Intelligence that <em>informs decisions,</em><br/>not just headlines.</h2>
+  <div class="about-grid">
+    <div class="about-body">
+      <p>Viginote was founded on a single conviction: that decision-makers operating in complex global environments deserve intelligence products calibrated to their specific exposure — not recycled news aggregation dressed as analysis.</p>
+      <p>Drawing on open-source methodology, field-grounded regional expertise, and structured analytical frameworks, we produce concise, actionable intelligence products for corporations, private individuals, and institutional clients navigating geopolitical risk.</p>
+      <p>We do not offer tiered subscriptions or generic content packages. Every engagement is bespoke, every product is purpose-built. If you need a country risk assessment, a travel security brief, or an event-specific advisory, we build it for you — and only you.</p>
+    </div>
+    <div>
+      <div class="pillar"><span class="pillar-num">01</span><div><div class="pillar-title">Analytical Rigour</div><div class="pillar-desc">Structured frameworks — ACH, scenario modelling, source reliability grading — applied to every product we produce.</div></div></div>
+      <div class="pillar"><span class="pillar-num">02</span><div><div class="pillar-title">Regional Depth</div><div class="pillar-desc">Primary focus on EMEA, MENA, and sub-Saharan Africa — where contextual knowledge is the difference between insight and noise.</div></div></div>
+      <div class="pillar"><span class="pillar-num">03</span><div><div class="pillar-title">Client Discretion</div><div class="pillar-desc">All engagements are confidential. Client identity, operational context, and intelligence requirements are held in strict confidence.</div></div></div>
+      <div class="pillar"><span class="pillar-num">04</span><div><div class="pillar-title">Actionable Products</div><div class="pillar-desc">Every product leads with a key judgement and closes with concrete recommendations. No lengthy reports without a conclusion.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-label">What We Deliver</div>
+  <h2 class="section-title">Services</h2>
+  <div class="services-grid">
+    <div class="service-card"><div class="service-idx">01 · Risk</div><div class="service-title">Country &amp;<br/>Regional Risk Assessment</div><div class="service-desc">Structured political, security, and operational risk assessments for specific markets — ideal for market entry, investment due diligence, and operational planning in complex environments.</div></div>
+    <div class="service-card"><div class="service-idx">02 · Travel</div><div class="service-title">Travel Security<br/>Advisory</div><div class="service-desc">Pre-travel threat assessments, in-country security protocols, and real-time advisory support for executives and high-value personnel in elevated-risk jurisdictions.</div></div>
+    <div class="service-card"><div class="service-idx">03 · Event</div><div class="service-title">Event-Specific<br/>Intelligence Briefs</div><div class="service-desc">Rapid-turnaround intelligence on specific geopolitical developments — elections, conflict escalation, sanctions, border incidents — and their direct operational implications.</div></div>
+    <div class="service-card"><div class="service-idx">04 · OSINT</div><div class="service-title">Open-Source<br/>Research &amp; Monitoring</div><div class="service-desc">Structured OSINT collection and analysis using publicly available information — media, official statements, social networks, financial filings — to support investigations or strategic decisions.</div></div>
+    <div class="service-card"><div class="service-idx">05 · Corporate</div><div class="service-title">Corporate Security<br/>Intelligence</div><div class="service-desc">Protective intelligence for corporate security teams: threat actor monitoring, venue assessments, executive exposure analysis, and SLA-aligned periodic intelligence products.</div></div>
+    <div class="service-card"><div class="service-idx">06 · Bespoke</div><div class="service-title">Custom Analytical<br/>Engagement</div><div class="service-desc">We scope your intelligence requirement from scratch — defining the key questions, collection strategy, and deliverable format best suited to your decision-making context.</div></div>
+  </div>
+</section>
+
+
+<!-- VISUAL BREAK -->
+<div style="
+  height: 340px;
+  background-image: url('hero-2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+">
+  <div style="
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(12,16,24,0.85) 0%,
+      rgba(12,16,24,0.45) 40%,
+      rgba(12,16,24,0.45) 60%,
+      rgba(12,16,24,0.85) 100%
+    );
+  "></div>
+  <div style="position:relative;z-index:1;text-align:center;padding:0 40px;">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#3B8BC4;margin-bottom:16px;">Strategic Intelligence · Real-Time Advisory · OSINT Analysis</div>
+    <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:#D8DDE6;line-height:1.3;">
+      Operating where clarity matters most.
+    </div>
+  </div>
+</div>
+
+<!-- INTELLIGENCE SAMPLE -->
+<section class="section section--surf" id="intelligence">
+  <div class="articles-intro">
+    <div class="section-label">Intelligence Sample</div>
+    <h2 class="section-title">What a <em>Viginote product</em> looks like.</h2>
+    <p>Below is a live-format sample of our standard intelligence brief — the same header, classification bar, analytical structure, and source methodology used in every client product. This public sample uses open-source data on a current geopolitical development.</p>
+  </div>
+
+  <div class="article-card">
+    <div class="article-header">
+      <div class="article-org">
+        <img class="article-logo-img" src="viginote-logo.png" alt="Viginote" />
+        <div>
+          <div class="article-org-name">VIGINOTE</div>
+          <div class="article-org-sub">Geopolitical Intelligence · Open-Source Analysis</div>
         </div>
+      </div>
+      <div class="article-meta-right">
+        <div class="article-ref"><strong>REF:</strong> VGN-2026-ME-047<br/><strong>REGION:</strong> Middle East &amp; North Africa<br/><strong>ISSUED:</strong> 15 May 2026</div>
+      </div>
+    </div>
+    <div class="article-class-bar">
+      <span class="class-text">OPEN SOURCE · UNCLASSIFIED · AUTHORISED DISTRIBUTION</span>
+      <div class="class-dots"><div class="cdot on"></div><div class="cdot on"></div><div class="cdot on"></div><div class="cdot"></div><div class="cdot"></div></div>
+    </div>
+    <div class="article-body">
+      <div class="art-type">Geopolitical Assessment · Energy Security</div>
+      <h2 class="art-headline">Middle East Energy Disruption: Operational Implications for Corporate Exposure in the Hormuz Corridor</h2>
+      <p class="art-deck">Escalating conflict in the Middle East has triggered the largest energy supply disruption in recorded history. This brief assesses the direct risk vectors for corporations with personnel, assets, or supply chain dependencies in the affected region.</p>
+      <div class="art-byline">
+        <div class="byline-avatar">CF</div>
+        <div><div class="byline-name">Chad Frankal</div><div class="byline-role">Lead Analyst — MENA Security &amp; Risk · Viginote</div></div>
+        <div class="byline-date">15 May 2026</div>
+      </div>
+      <div class="key-j">
+        <div class="kj-label">● Key Judgement</div>
+        <div class="kj-text">The ongoing conflict in the Middle East has effectively shut down approximately one-fifth of global LNG supply. Corporations with operations, personnel, or supply dependencies in the Gulf corridor face elevated and near-term risks to continuity, personnel safety, and procurement costs. Logistics risk is assessed as HIGH; financial and personnel exposure as ELEVATED.</div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-cell h"><div class="rlabel">Logistics Risk</div><div class="rval">Strait of Hormuz</div><div class="rlvl">■■■■ HIGH</div></div>
+        <div class="risk-cell m"><div class="rlabel">Personnel Risk</div><div class="rval">GCC Expatriates</div><div class="rlvl">■■■□ ELEVATED</div></div>
+        <div class="risk-cell e"><div class="rlabel">Financial Exposure</div><div class="rval">Energy Price Volatility</div><div class="rlvl">■■■□ ELEVATED</div></div>
+      </div>
+      <div class="art-subhead">Situational Overview</div>
+      <div class="art-text">
+        <p>The conflict's trajectory has evolved into a global energy-security repricing event, driven by disrupted shipping, tighter LNG availability, and elevated risk premiums across oil, gas, and power markets. The International Energy Agency has characterised this as the largest supply disruption in the history of the global oil market.</p>
+        <p>For the power and utilities sector, the primary shock is gas and LNG availability. Asia faces acute physical exposure given the volume of Hormuz-routed supply. Europe faces secondary exposure through price linkage — the Dutch TTF benchmark rose over 60% in March 2026.</p>
+      </div>
+      <div class="art-subhead">Risk Vectors for Corporate Clients</div>
+      <div class="art-text">
+        <p><strong>Supply Chain Continuity:</strong> Companies dependent on GCC-origin materials or energy inputs should initiate contingency sourcing assessments immediately. Transit time increases and shipping cost premiums are already materialising.</p>
+        <p><strong>Personnel &amp; Travel Security:</strong> Non-essential travel to the Gulf subregion should be suspended. Executive movements require enhanced pre-travel assessment and in-country protocol review.</p>
+        <p><strong>Regulatory &amp; Sanctions Exposure:</strong> Companies with operations adjacent to conflict zones should audit third-party and supplier relationships for secondary sanctions exposure and reputational risk.</p>
+      </div>
+      <div class="art-subhead">Viginote Assessment</div>
+      <div class="art-text">
+        <p>The probability of near-term de-escalation sufficient to restore pre-conflict energy flows is assessed as LOW. Organisations that build supply chain redundancy, review personnel security protocols, and establish real-time intelligence monitoring mechanisms now will hold material operational advantage as the situation develops.</p>
+      </div>
+      <div class="art-sources">
+        <strong>Sources (OSINT):</strong> EY Geostrategic Analysis May 2026 · International Energy Agency · BlackRock BGRI March 2026 · Crisis24 Global Risk Forecast 2026 · Recorded Future State of Security 2026<br/>
+        <strong>Source Reliability:</strong> A-1 to B-2 (corroborated across multiple independent outlets) &nbsp;·&nbsp; <strong>Cut-Off:</strong> 14 May 2026
+      </div>
+    </div>
+    <div class="art-footer">
+      <div class="art-footer-disc">© Viginote 2026 · Open-source analytical product · Not for redistribution without attribution</div>
+      <div class="art-footer-logo"><img src="viginote-logo.png" alt="" /><span class="art-footer-wordmark">VIGINOTE · VGN-2026</span></div>
+    </div>
+  </div>
+</section>
 
-        <div class="pricing-container">
-            <div class="pricing-card tier-1">
-                <div class="card-header">
-                    <h3>VigiNote Intelligence</h3>
-                    <p class="tier-level">Tier 1: Foundation</p>
-                </div>
-                <div class="card-body">
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> OSINT Real-Time Alerts (Severity 8-10)</li>
-                        <li><i class="fas fa-check-circle"></i> Daily/Weekly Global Risk Digests</li>
-                        <li><i class="fas fa-check-circle"></i> Multi-Regional Coverage (5 Continents)</li>
-                        <li class="disabled"><i class="fas fa-times-circle"></i> On-Demand Analyst Q&A</li>
-                        <li class="disabled"><i class="fas fa-times-circle"></i> Bespoke Pre-Travel Advisories</li>
-                        <li class="disabled"><i class="fas fa-times-circle"></i> Executive Protective Planning</li>
-                    </ul>
-                    <a href="#subscribe-1" class="cta-button primary">View Details & Subscribe</a>
-                </div>
-            </div>
+<!-- WHY VIGINOTE -->
+<section class="section section--light">
+  <div class="section-label">Why Viginote</div>
+  <h2 class="section-title">Built on <em>field experience,</em><br/>not theory.</h2>
+  <div class="mandate-cols">
+    <div class="mandate-text">
+      <p>Viginote's analytical foundation is rooted in 13 years of operational security experience across South Africa, Israel, and the broader EMEA region — including physical security management, government contract operations, VIP protection, and law enforcement liaison.</p>
+      <p>This isn't desk analysis. Our understanding of how risk materialises in the real world — how a threat escalates from signal to incident, how institutional breakdown affects operational continuity — comes from working inside complex environments, not observing them from the outside.</p>
+      <p>That ground-level perspective, combined with structured OSINT methodology and a commitment to analytical rigour, is what makes Viginote products genuinely useful to clients who need to act on intelligence, not just read it.</p>
+    </div>
+    <div>
+      <div class="fact"><div class="fact-num">13+</div><div class="fact-label">Years Operational Security Experience</div></div>
+      <div class="fact"><div class="fact-num">3</div><div class="fact-label">Primary Languages — EN · HE · AF</div></div>
+      <div class="fact"><div class="fact-num">EMEA</div><div class="fact-label">Primary Regional Focus</div></div>
+      <div class="fact"><div class="fact-num">100%</div><div class="fact-label">Bespoke — No Generic Content</div></div>
+    </div>
+  </div>
+</section>
 
-            <div class="pricing-card tier-2 highlighted">
-                <div class="tag">Recommended</div>
-                <div class="card-header">
-                    <h3>Analysis & Support</h3>
-                    <p class="tier-level">Tier 2: Enhanced Context</p>
-                </div>
-                <div class="card-body">
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> **ALL Tier 1 Features**</li>
-                        <li><i class="fas fa-check-circle"></i> On-Demand Analyst Q&A (Monthly Allotment)</li>
-                        <li><i class="fas fa-check-circle"></i> Bespoke Pre-Travel Advisories (2/Year)</li>
-                        <li><i class="fas fa-check-circle"></i> Downloadable Risk Assessment Templates</li>
-                        <li class="disabled"><i class="fas fa-times-circle"></i> Dedicated 24/7 Security Operations Center (GSOC)</li>
-                        <li class="disabled"><i class="fas fa-times-circle"></i> Protective Planning/Go-No-Go Reports</li>
-                    </ul>
-                    <a href="#subscribe-2" class="cta-button secondary">Start 7-Day Free Trial</a>
-                </div>
-            </div>
+<!-- CONTACT -->
+<section class="section section--mid" id="contact">
+  <div class="section-label">Engage Viginote</div>
+  <h2 class="section-title">Commission a<br/><em>tailored intelligence product.</em></h2>
+  <div class="contact-inner">
+    <div>
+      <p class="contact-statement">Every engagement begins with a conversation about <em>what you need to know</em> — and why it matters.</p>
+      <p class="contact-body">We work with corporations, family offices, executive protection teams, law firms, and individual clients who require customised intelligence support. There are no off-the-shelf products. Contact us to discuss your requirement.</p>
+      <a href="mailto:chadfrankal@gmail.com" class="contact-email">✉ &nbsp; chadfrankal@gmail.com</a>
+      <div class="contact-meta">LinkedIn &nbsp;·&nbsp; Chad Frankal<br/>Focus Regions &nbsp;·&nbsp; EMEA · MENA · SADC<br/>Response Time &nbsp;·&nbsp; Within 24 Hours</div>
+    </div>
+    <div class="contact-form">
+      <label class="f-label">Your Name</label>
+      <input type="text" class="f-input" placeholder="Full name" />
+      <label class="f-label">Organisation</label>
+      <input type="text" class="f-input" placeholder="Company or institution" />
+      <label class="f-label">Service Required</label>
+      <select class="f-select">
+        <option value="">Select a service</option>
+        <option>Country / Regional Risk Assessment</option>
+        <option>Travel Security Advisory</option>
+        <option>Event-Specific Intelligence Brief</option>
+        <option>OSINT Research &amp; Monitoring</option>
+        <option>Corporate Security Intelligence</option>
+        <option>Custom Analytical Engagement</option>
+      </select>
+      <label class="f-label">Brief Description of Requirement</label>
+      <textarea class="f-textarea" placeholder="Describe your intelligence requirement, region of concern, and any relevant timeframes..."></textarea>
+      <button class="f-btn">Submit Enquiry</button>
+      <p class="f-note">All enquiries are treated with strict confidentiality.</p>
+    </div>
+  </div>
+</section>
 
-            <div class="pricing-card tier-3">
-                <div class="card-header">
-                    <h3>Advisory & Protection</h3>
-                    <p class="tier-level">Tier 3: Executive Partnership</p>
-                </div>
-                <div class="card-body">
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> **ALL Tier 2 Features**</li>
-                        <li><i class="fas fa-check-circle"></i> Unlimited Direct Analyst Access</li>
-                        <li><i class="fas fa-check-circle"></i> Bespoke Deep-Dive Intelligence Reports</li>
-                        <li><i class="fas fa-check-circle"></i> Dedicated 24/7 Security Operations Center (GSOC)</li>
-                        <li><i class="fas fa-check-circle"></i> Executive Threat Brief Templates</li>
-                        <li><i class="fas fa-check-circle"></i> Protective Planning/Go-No-Go Reports</li>
-                    </ul>
-                    <a href="#subscribe-3" class="cta-button primary">Request Consultation</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap">
+        <img class="footer-logo-img" src="viginote-logo.png" alt="Viginote" />
+        <span class="footer-wordmark">VIGINOTE</span>
+      </div>
+      <p class="footer-tagline">"Intelligence without analysis is just noise. Analysis without experience is just theory."</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col"><div class="footer-col-title">Navigate</div><ul><li><a href="#mandate">Mandate</a></li><li><a href="#services">Services</a></li><li><a href="#intelligence">Intelligence Samples</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Services</div><ul><li><a href="#services">Risk Assessment</a></li><li><a href="#services">Travel Advisory</a></li><li><a href="#services">Event Intelligence</a></li><li><a href="#services">OSINT Research</a></li></ul></div>
+      <div class="footer-col"><div class="footer-col-title">Regions</div><ul><li><a href="#">Middle East &amp; North Africa</a></li><li><a href="#">Sub-Saharan Africa</a></li><li><a href="#">Eastern Europe</a></li><li><a href="#">Indo-Pacific</a></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© Viginote 2026 · All Rights Reserved</div>
+    <div class="footer-legal">All analytical products are based on open-source information and represent the views of Viginote analysts at the time of publication. Products are for informational purposes only and do not constitute legal, financial, or operational advice. Redistribution without express attribution is prohibited.</div>
+  </div>
+</footer>
+
 </body>
 </html>
