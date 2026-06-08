@@ -217,43 +217,41 @@ footer{padding:32px 60px;border-top:1px solid rgba(59,139,196,0.08);
   <div class="ph-glow"></div>
   <span class="section-label">Transparent Pricing</span>
   <h1>Intelligence that fits<br><em>your budget</em></h1>
-  <p>Start free with our public Telegram channel. Scale as your intelligence needs grow. No sales calls required for Analyst and Operator tiers.</p>
+  <p>Professional intelligence for security teams, risk professionals and field operators. Subscriptions by enquiry only.</p>
 
   <div class="billing-toggle">
     <button class="bt-opt on" id="btn-monthly" onclick="setBilling('monthly')">Monthly</button>
     <button class="bt-opt" id="btn-annual" onclick="setBilling('annual')">Annual <span class="bt-save">SAVE 17%</span></button>
   </div>
-</section>
+</div><!-- /hero -->
 
-<!-- PRICING CARDS -->
-<section class="pricing-section">
-  <div class="pricing-grid">
+<!-- TIERS -->
+<section class="tiers-section">
+  <div class="tiers-grid">
 
     <!-- MONITOR -->
     <div class="tier-card">
       <div class="tier-icon">📡</div>
       <div class="tier-name">Monitor</div>
-      <div class="tier-tagline">Start tracking. No commitment.</div>
+      <div class="tier-tagline">Public intelligence. No platform access.</div>
       <div class="tier-price">
         <div class="price-amount free">Free</div>
-        <span class="price-period">always free</span>
+        <span class="price-period">Telegram channel only</span>
       </div>
       <div class="tier-divider"></div>
       <ul class="tier-features">
-        <li><span class="tf-check">✓</span> Telegram public channel alerts</li>
-        <li><span class="tf-check">✓</span> Geographic stream (conflict &amp; security)</li>
-        <li><span class="tf-check">✓</span> 1 global region</li>
-        <li><span class="tf-check">✓</span> 3 watchlist terms</li>
-        <li><span class="tf-x">—</span> <span class="tf-dim">Client intelligence feed</span></li>
-        <li><span class="tf-x">—</span> <span class="tf-dim">Portal analytics</span></li>
-        <li><span class="tf-x">—</span> <span class="tf-dim">Intelligence briefs</span></li>
-        <li><span class="tf-x">—</span> <span class="tf-dim">Additional streams</span></li>
+        <li><span class="tf-check">✓</span> Viginote public Telegram channel</li>
+        <li><span class="tf-check">✓</span> Real-time conflict &amp; security alerts</li>
+        <li><span class="tf-check">✓</span> Geographic stream — global coverage</li>
+        <li><span class="tf-check">✓</span> Published flash briefs &amp; analysis</li>
+        <li><span class="tf-x">—</span> <span class="tf-dim">No client portal access</span></li>
+        <li><span class="tf-x">—</span> <span class="tf-dim">No filtered feed or watchlist</span></li>
+        <li><span class="tf-x">—</span> <span class="tf-dim">No intelligence deliverables</span></li>
       </ul>
       <div class="tier-limits">
-        <div class="tl-row"><span class="tl-label">Regions</span><span class="tl-val">1</span></div>
-        <div class="tl-row"><span class="tl-label">Streams</span><span class="tl-val">1 (Geographic)</span></div>
-        <div class="tl-row"><span class="tl-label">Briefs / mo</span><span class="tl-val">0</span></div>
-        <div class="tl-row"><span class="tl-label">Watchlist</span><span class="tl-val">3 terms</span></div>
+        <div class="tl-row"><span class="tl-label">Platform</span><span class="tl-val">Telegram only</span></div>
+        <div class="tl-row"><span class="tl-label">Regions</span><span class="tl-val">Global (public)</span></div>
+        <div class="tl-row"><span class="tl-label">Briefs</span><span class="tl-val">Public posts only</span></div>
       </div>
       <div class="tier-cta">
         <a href="https://t.me/viginotealerts" target="_blank" class="btn-tier btn-tier-outline">Join Telegram →</a>
@@ -264,212 +262,228 @@ footer{padding:32px 60px;border-top:1px solid rgba(59,139,196,0.08);
     <div class="tier-card">
       <div class="tier-icon">🔍</div>
       <div class="tier-name">Analyst</div>
-      <div class="tier-tagline">For security consultants &amp; researchers.</div>
+      <div class="tier-tagline">Your regions. Your watchlist. Your feed.</div>
       <div class="tier-price">
         <div class="price-amount" id="price-analyst">$149</div>
         <span class="price-period" id="period-analyst">per month</span>
+        <div class="price-annual" id="annual-analyst">$1,490/yr — save $298</div>
       </div>
-      <div class="price-annual" id="annual-analyst">$1,490 / year — save $298</div>
       <div class="tier-divider"></div>
       <ul class="tier-features">
-        <li><span class="tf-check">✓</span> Live intelligence feed <span style="color:var(--blue-2);font-size:.78rem">/client</span></li>
-        <li><span class="tf-check">✓</span> 2 regions of your choice</li>
-        <li><span class="tf-check">✓</span> 3 countries (country-level filter)</li>
-        <li><span class="tf-check">✓</span> Geographic + 1 stream</li>
-        <li><span class="tf-check">✓</span> 5 watchlist terms</li>
-        <li><span class="tf-check">✓</span> 2 intelligence briefs / month</li>
-        <li><span class="tf-check">✓</span> Portal analytics dashboard</li>
-        <li><span class="tf-x">—</span> <span class="tf-dim">Weekly digest delivery</span></li>
+        <li><span class="tf-check">✓</span> Client intelligence portal</li>
+        <li><span class="tf-check">✓</span> 2 regions, 2 streams</li>
+        <li><span class="tf-check">✓</span> 5 watchlist terms with hit tracking</li>
+        <li><span class="tf-check">✓</span> Regional risk &amp; travel advisory dashboard</li>
+        <li><span class="tf-check">✓</span> 2 intelligence briefs per month</li>
+        <li><span class="tf-check">✓</span> Weekly digest delivery</li>
+        <li><span class="tf-x">—</span> <span class="tf-dim">No location assessments</span></li>
+        <li><span class="tf-x">—</span> <span class="tf-dim">No watchlist push alerts</span></li>
       </ul>
       <div class="tier-limits">
         <div class="tl-row"><span class="tl-label">Regions</span><span class="tl-val">2</span></div>
         <div class="tl-row"><span class="tl-label">Streams</span><span class="tl-val">2</span></div>
-        <div class="tl-row"><span class="tl-label">Briefs / mo</span><span class="tl-val">2</span></div>
         <div class="tl-row"><span class="tl-label">Watchlist</span><span class="tl-val">5 terms</span></div>
+        <div class="tl-row"><span class="tl-label">Briefs/mo</span><span class="tl-val">2</span></div>
       </div>
       <div class="tier-cta">
-        <a href="mailto:info@viginote.com?subject=Analyst Subscription&body=I'm interested in the Analyst tier." class="btn-tier btn-tier-outline">Get Started →</a>
+        <a href="mailto:info@viginote.com?subject=Analyst Subscription Enquiry&body=I'm interested in the Analyst tier at $149/month." class="btn-tier btn-tier-outline">Enquire Now →</a>
       </div>
     </div>
 
     <!-- OPERATOR — FEATURED -->
     <div class="tier-card featured">
       <div class="featured-badge">Most Popular</div>
-      <div class="tier-icon">⚙️</div>
+      <div class="tier-icon">🛡</div>
       <div class="tier-name">Operator</div>
-      <div class="tier-tagline">For corporate security &amp; travel teams.</div>
+      <div class="tier-tagline">Full platform. Team-grade intelligence.</div>
       <div class="tier-price">
         <div class="price-amount" id="price-operator">$399</div>
         <span class="price-period" id="period-operator">per month</span>
+        <div class="price-annual" id="annual-operator">$3,990/yr — save $798</div>
       </div>
-      <div class="price-annual" id="annual-operator">$3,990 / year — save $798</div>
       <div class="tier-divider"></div>
       <ul class="tier-features">
         <li><span class="tf-check">✓</span> Everything in Analyst</li>
-        <li><span class="tf-check">✓</span> 4 regions of your choice</li>
-        <li><span class="tf-check">✓</span> 10 countries (country-level filter)</li>
-        <li><span class="tf-check">✓</span> Geographic + 3 streams</li>
+        <li><span class="tf-check">✓</span> 4 regions, 4 streams</li>
         <li><span class="tf-check">✓</span> 15 watchlist terms</li>
-        <li><span class="tf-check">✓</span> 5 intelligence briefs / month</li>
-        <li><span class="tf-check">✓</span> Full portal analytics</li>
-        <li><span class="tf-check">✓</span> Travel advisory status</li>
+        <li><span class="tf-check">✓</span> Watchlist push alerts (score 8+)</li>
+        <li><span class="tf-check">✓</span> Location risk assessments</li>
+        <li><span class="tf-check">✓</span> 5 intelligence briefs per month</li>
+        <li><span class="tf-check">✓</span> Monthly PDF intelligence report</li>
+        <li><span class="tf-check">✓</span> Deep analysis products</li>
       </ul>
       <div class="tier-limits">
         <div class="tl-row"><span class="tl-label">Regions</span><span class="tl-val">4</span></div>
         <div class="tl-row"><span class="tl-label">Streams</span><span class="tl-val">4</span></div>
-        <div class="tl-row"><span class="tl-label">Briefs / mo</span><span class="tl-val">5</span></div>
         <div class="tl-row"><span class="tl-label">Watchlist</span><span class="tl-val">15 terms</span></div>
+        <div class="tl-row"><span class="tl-label">Briefs/mo</span><span class="tl-val">5 + PDF report</span></div>
       </div>
       <div class="tier-cta">
-        <a href="mailto:info@viginote.com?subject=Operator Subscription&body=I'm interested in the Operator tier." class="btn-tier btn-tier-solid">Get Started →</a>
+        <a href="mailto:info@viginote.com?subject=Operator Subscription Enquiry&body=I'm interested in the Operator tier at $399/month." class="btn-tier btn-tier-solid">Enquire Now →</a>
       </div>
     </div>
 
     <!-- ENTERPRISE -->
     <div class="tier-card">
-      <div class="tier-icon">🛡</div>
+      <div class="tier-icon">🌐</div>
       <div class="tier-name">Enterprise</div>
-      <div class="tier-tagline">For multinationals &amp; investment firms.</div>
+      <div class="tier-tagline">All regions. All streams. All intelligence.</div>
       <div class="tier-price">
         <div class="price-amount" id="price-enterprise">$899</div>
         <span class="price-period" id="period-enterprise">per month</span>
+        <div class="price-annual" id="annual-enterprise">$8,990/yr — save $1,798</div>
       </div>
-      <div class="price-annual" id="annual-enterprise">$8,990 / year — save $1,798</div>
       <div class="tier-divider"></div>
       <ul class="tier-features">
         <li><span class="tf-check">✓</span> Everything in Operator</li>
-        <li><span class="tf-check">✓</span> All 7 regions · all countries</li>
-        <li><span class="tf-check">✓</span> All 5 intelligence streams</li>
+        <li><span class="tf-check">✓</span> All 7 regions, all 6 streams</li>
         <li><span class="tf-check">✓</span> 50 watchlist terms</li>
-        <li><span class="tf-check">✓</span> 20 intelligence briefs / month</li>
-        <li><span class="tf-check">✓</span> Weekly digest delivery</li>
-        <li><span class="tf-check">✓</span> Geospatial risk maps</li>
-        <li><span class="tf-check">✓</span> Priority analyst response</li>
+        <li><span class="tf-check">✓</span> Unlimited intelligence briefs</li>
+        <li><span class="tf-check">✓</span> Alert API access ($299 standalone)</li>
+        <li><span class="tf-check">✓</span> Compliance &amp; audit export</li>
+        <li><span class="tf-check">✓</span> Priority brief turnaround</li>
+        <li><span class="tf-check">✓</span> Dedicated account support</li>
       </ul>
       <div class="tier-limits">
         <div class="tl-row"><span class="tl-label">Regions</span><span class="tl-val">All 7</span></div>
-        <div class="tl-row"><span class="tl-label">Streams</span><span class="tl-val">All 5</span></div>
-        <div class="tl-row"><span class="tl-label">Briefs / mo</span><span class="tl-val">20</span></div>
+        <div class="tl-row"><span class="tl-label">Streams</span><span class="tl-val">All 6</span></div>
         <div class="tl-row"><span class="tl-label">Watchlist</span><span class="tl-val">50 terms</span></div>
+        <div class="tl-row"><span class="tl-label">Briefs/mo</span><span class="tl-val">Unlimited</span></div>
       </div>
       <div class="tier-cta">
-        <a href="mailto:info@viginote.com?subject=Enterprise Subscription Enquiry" class="btn-tier btn-tier-outline">Contact Us →</a>
+        <a href="mailto:info@viginote.com?subject=Enterprise Subscription Enquiry&body=I'm interested in the Enterprise tier." class="btn-tier btn-tier-outline">Contact Us →</a>
       </div>
     </div>
 
     <!-- BESPOKE -->
     <div class="tier-card">
-      <div class="tier-icon">◆</div>
+      <div class="tier-icon">🎯</div>
       <div class="tier-name">Bespoke</div>
-      <div class="tier-tagline">Analyst-written briefs. Direct access.</div>
+      <div class="tier-tagline">Named analyst. Custom monitoring. Direct access.</div>
       <div class="tier-price">
-        <div class="price-amount" style="font-size:2rem">From $1,500</div>
-        <span class="price-period">per month · negotiated</span>
+        <div class="price-amount" style="font-size:2rem">From $2,500</div>
+        <span class="price-period">per month</span>
       </div>
       <div class="tier-divider"></div>
       <ul class="tier-features">
         <li><span class="tf-check">✓</span> Everything in Enterprise</li>
-        <li><span class="tf-check">✓</span> Custom intelligence streams</li>
-        <li><span class="tf-check">✓</span> Analyst-written briefs (Chad Frankal)</li>
-        <li><span class="tf-check">✓</span> Unlimited briefs &amp; watchlist</li>
-        <li><span class="tf-check">✓</span> Direct analyst WhatsApp/email access</li>
-        <li><span class="tf-check">✓</span> Dedicated private Telegram channel</li>
-        <li><span class="tf-check">✓</span> Custom report formats</li>
-        <li><span class="tf-check">✓</span> Monthly strategy call</li>
+        <li><span class="tf-check">✓</span> Monthly analyst call (60 min)</li>
+        <li><span class="tf-check">✓</span> Custom monitoring parameters</li>
+        <li><span class="tf-check">✓</span> Bespoke written intelligence assessments</li>
+        <li><span class="tf-check">✓</span> Named account — max 4 clients</li>
+        <li><span class="tf-check">✓</span> Direct WhatsApp/Signal for urgent alerts</li>
+        <li><span class="tf-check">✓</span> Quarterly strategic review</li>
       </ul>
       <div class="tier-limits">
-        <div class="tl-row"><span class="tl-label">Regions</span><span class="tl-val">Custom</span></div>
-        <div class="tl-row"><span class="tl-label">Streams</span><span class="tl-val">All + Custom</span></div>
-        <div class="tl-row"><span class="tl-label">Briefs / mo</span><span class="tl-val">Unlimited</span></div>
-        <div class="tl-row"><span class="tl-label">Watchlist</span><span class="tl-val">Unlimited</span></div>
+        <div class="tl-row"><span class="tl-label">Availability</span><span class="tl-val">Max 4 clients</span></div>
+        <div class="tl-row"><span class="tl-label">Contract</span><span class="tl-val">3-month min</span></div>
+        <div class="tl-row"><span class="tl-label">Analyst</span><span class="tl-val">Named, dedicated</span></div>
       </div>
       <div class="tier-cta">
-        <a href="mailto:info@viginote.com?subject=Bespoke Intelligence Enquiry&body=I'm interested in a bespoke intelligence arrangement." class="btn-tier btn-tier-contact">Book a Call →</a>
+        <a href="mailto:info@viginote.com?subject=Bespoke Intelligence Enquiry&body=I'm interested in a bespoke intelligence arrangement and would like to discuss requirements." class="btn-tier btn-tier-contact">Book a Conversation →</a>
       </div>
+    </div>
+
+  </div><!-- /tiers-grid -->
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare-section">
+  <h2>Compare tiers</h2>
+  <p style="text-align:center;color:var(--steel);font-size:0.9rem;margin-bottom:40px;font-family:var(--mono)">All paid tiers require a subscription. No free platform access.</p>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Monitor</th>
+          <th>Analyst</th>
+          <th>Operator</th>
+          <th>Enterprise</th>
+          <th>Bespoke</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ct-head"><td colspan="6">Access</td></tr>
+        <tr><td>Telegram channel</td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Client intelligence portal</td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Alert API access</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+
+        <tr class="ct-head"><td colspan="6">Intelligence Feed</td></tr>
+        <tr><td>Regions</td><td><span class="ct-no">Public</span></td><td><span class="ct-val">2</span></td><td><span class="ct-val">4</span></td><td><span class="ct-val">All 7</span></td><td><span class="ct-val">All 7</span></td></tr>
+        <tr><td>Streams</td><td><span class="ct-val">Geographic</span></td><td><span class="ct-val">2</span></td><td><span class="ct-val">4</span></td><td><span class="ct-val">All 6</span></td><td><span class="ct-val">All 6</span></td></tr>
+        <tr><td>Watchlist terms</td><td><span class="ct-no">—</span></td><td><span class="ct-val">5</span></td><td><span class="ct-val">15</span></td><td><span class="ct-val">50</span></td><td><span class="ct-val">Unlimited</span></td></tr>
+        <tr><td>Watchlist push alerts</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+
+        <tr class="ct-head"><td colspan="6">Intelligence Products</td></tr>
+        <tr><td>Intelligence briefs/month</td><td><span class="ct-no">—</span></td><td><span class="ct-val">2</span></td><td><span class="ct-val">5</span></td><td><span class="ct-val">Unlimited</span></td><td><span class="ct-val">Unlimited</span></td></tr>
+        <tr><td>Location risk assessments</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Deep analysis products</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Weekly digest</td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Monthly PDF report</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Compliance / audit export</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
+
+        <tr class="ct-head"><td colspan="6">Analyst Access</td></tr>
+        <tr><td>Named analyst</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Monthly analyst call</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td></tr>
+        <tr><td>Direct comms (WhatsApp/Signal)</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td></tr>
+
+        <tr class="ct-head"><td colspan="6">Pricing</td></tr>
+        <tr><td>Monthly</td><td><span class="ct-val">Free</span></td><td><span class="ct-val">$149</span></td><td><span class="ct-val">$399</span></td><td><span class="ct-val">$899</span></td><td><span class="ct-val">From $2,500</span></td></tr>
+        <tr><td>Annual (17% saving)</td><td><span class="ct-val">Free</span></td><td><span class="ct-val">$1,490</span></td><td><span class="ct-val">$3,990</span></td><td><span class="ct-val">$8,990</span></td><td><span class="ct-val">Negotiated</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-wrap">
+    <h2>Common questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Is there a free trial?</div>
+      <div class="faq-a">No. Viginote is a professional intelligence service. The free Monitor tier gives you access to our public Telegram channel so you can assess the quality of our intelligence before committing to a subscription. For paid tiers, contact us at info@viginote.com to discuss your requirements.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I get access to the platform?</div>
+      <div class="faq-a">All paid subscriptions are set up manually. Email info@viginote.com with your tier of interest and we'll onboard you within 24 hours. Your credentials are sent securely and you access the platform via viginote.com.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What regions and streams are available?</div>
+      <div class="faq-a">Regions: Middle East, Europe, Asia, West/East Africa, Southern Africa, South America, and Global. Streams: Geographic (conflict &amp; security), Maritime, Cyber, Economic, Political, Executive Protection. Your tier determines how many of each you can access.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What is a watchlist alert?</div>
+      <div class="faq-a">You define up to 50 terms — country names, actor names, organisations, topics. Viginote monitors every incoming alert for these terms. When a match scores above 8/10 severity, you receive an immediate push notification. This is the core duty-of-care feature for field security teams.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What are the contract terms?</div>
+      <div class="faq-a">Analyst and Operator: monthly, no minimum term. Enterprise: monthly or annual. Bespoke: 3-month minimum, negotiated individually. Annual subscriptions save 17%.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Who is Viginote built for?</div>
+      <div class="faq-a">NGO field security managers, corporate security directors, risk consultants, private equity analysts with emerging market exposure, executive protection firms, maritime operators, and legal/insurance teams requiring country risk intelligence.</div>
     </div>
 
   </div>
 </section>
 
-<!-- COMPARISON TABLE -->
-<section class="compare-section">
-  <h2>Full feature <em>comparison</em></h2>
-  <p>Everything included at each tier. No hidden fees.</p>
-  <table class="compare-table">
-    <thead>
-      <tr>
-        <th style="text-align:left">Feature</th>
-        <th>Monitor</th>
-        <th>Analyst</th>
-        <th>Operator</th>
-        <th>Enterprise</th>
-        <th>Bespoke</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="ct-head"><td colspan="6">Intelligence Access</td></tr>
-      <tr><td>Telegram public channel</td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Live intelligence feed</td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Portal analytics dashboard</td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Regions</td><td><span class="ct-val">1</span></td><td><span class="ct-val">2</span></td><td><span class="ct-val">4</span></td><td><span class="ct-val">All 7</span></td><td><span class="ct-val">Custom</span></td></tr>
-      <tr><td>Country-level filter</td><td><span class="ct-no">—</span></td><td><span class="ct-val">3</span></td><td><span class="ct-val">10</span></td><td><span class="ct-yes">✓ All</span></td><td><span class="ct-yes">✓ All</span></td></tr>
-      <tr class="ct-head"><td colspan="6">Intelligence Streams</td></tr>
-      <tr><td>Geographic (conflict &amp; security)</td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Maritime security</td><td><span class="ct-no">—</span></td><td><span class="ct-val">Add-on</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Cyber &amp; infrastructure</td><td><span class="ct-no">—</span></td><td><span class="ct-val">Add-on</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Economic &amp; financial risk</td><td><span class="ct-no">—</span></td><td><span class="ct-val">Add-on</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Political risk</td><td><span class="ct-no">—</span></td><td><span class="ct-val">Add-on</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Executive protection</td><td><span class="ct-no">—</span></td><td><span class="ct-val">Add-on</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr class="ct-head"><td colspan="6">Outputs &amp; Deliverables</td></tr>
-      <tr><td>Intelligence briefs / month</td><td><span class="ct-no">0</span></td><td><span class="ct-val">2</span></td><td><span class="ct-val">5</span></td><td><span class="ct-val">20</span></td><td><span class="ct-val">Unlimited</span></td></tr>
-      <tr><td>Watchlist terms</td><td><span class="ct-val">3</span></td><td><span class="ct-val">5</span></td><td><span class="ct-val">15</span></td><td><span class="ct-val">50</span></td><td><span class="ct-val">Unlimited</span></td></tr>
-      <tr><td>Weekly digest delivery</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Geospatial risk maps</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr class="ct-head"><td colspan="6">Analyst Access</td></tr>
-      <tr><td>Analyst-written briefs</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Direct analyst access</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Private Telegram channel</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td></tr>
-      <tr><td>Monthly strategy call</td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-no">—</span></td><td><span class="ct-yes">✓</span></td></tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <h2>Common <em>questions</em></h2>
-  <div class="faq-item">
-    <div class="faq-q">How does billing work?</div>
-    <div class="faq-a">Monthly subscriptions are billed on the same date each month. Annual subscriptions are billed upfront and save you 17% compared to monthly. Payment is handled via invoice — contact info@viginote.com to get started.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">Can I change my regions or streams after subscribing?</div>
-    <div class="faq-a">Yes — contact your analyst and we'll update your profile within 24 hours. Region and stream changes take effect at your next billing cycle unless you're upgrading, in which case they're instant.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">What are intelligence streams?</div>
-    <div class="faq-a">Streams are topic-based intelligence filters on top of your geographic coverage. Geographic is always included (conflict, security, military). Additional streams cover Maritime Security, Cyber & Infrastructure, Economic & Financial Risk, Political Risk, and Executive Protection. You choose which streams match your risk profile.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">What counts as an intelligence brief?</div>
-    <div class="faq-a">A brief is a formally structured intelligence document generated from selected alerts — covering key judgement, risk matrix, situational overview, analyst assessment, and recommendations. Formatted for client distribution and downloadable as PDF.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">Is there a contract or minimum term?</div>
-    <div class="faq-a">Monthly subscriptions have no minimum term — cancel anytime. Annual subscriptions are 12-month commitments. Bespoke arrangements are negotiated individually.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">Who is VigiNote for?</div>
-    <div class="faq-a">Security consultants, corporate travel managers, risk analysts, NGO field directors, private equity due diligence teams, law firms with international exposure, and any organisation that needs actionable geopolitical intelligence without a six-figure enterprise contract.</div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<section class="cta-band">
-  <h2>Ready to see the <em>intelligence?</em></h2>
-  <p>Start with the free Telegram channel. Upgrade when you're ready.</p>
-  <div class="cta-actions">
-    <a href="https://t.me/viginotealerts" target="_blank" class="btn-primary" style="text-decoration:none;padding:16px 36px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:var(--blue)">Join Free Channel →</a>
-    <a href="mailto:info@viginote.com?subject=VigiNote Subscription Enquiry" style="font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--mist);text-decoration:none">Contact for Access →</a>
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-label">Ready to get started?</div>
+    <h2 class="cta-title">Intelligence that works for you</h2>
+    <p class="cta-sub">Follow us on Telegram for free public intelligence. Contact us to discuss a subscription.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+      <a href="https://t.me/viginotealerts" target="_blank" class="btn-primary" style="text-decoration:none;padding:16px 36px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:var(--blue)">Join Telegram →</a>
+      <a href="mailto:info@viginote.com?subject=Viginote Subscription Enquiry" class="btn-secondary" style="text-decoration:none;padding:16px 36px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-2);border:1px solid rgba(91,168,218,0.35)">Contact Us →</a>
+    </div>
   </div>
 </section>
 
