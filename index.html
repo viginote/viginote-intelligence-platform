@@ -891,7 +891,7 @@ function showTab(id, btn) {
 }
 
 // Contact form — sends to info@viginote.com via mailto
-function submitEnquiry(btn) {
+async function submitEnquiry(btn) {
   const form = btn.closest('.contact-form');
   const name = form.querySelector('input[placeholder="Full name"]').value.trim();
   const org  = form.querySelector('input[placeholder="Company or institution"]').value.trim();
@@ -903,15 +903,40 @@ function submitEnquiry(btn) {
     return;
   }
 
-  const subject = encodeURIComponent('Viginote Intelligence Enquiry' + (svc ? ' — ' + svc : ''));
-  const body = encodeURIComponent(
-    'Name: ' + name + '\n' +
-    'Organisation: ' + (org || 'Not provided') + '\n' +
-    'Service Required: ' + (svc || 'Not specified') + '\n\n' +
-    'Requirement:\n' + desc
-  );
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
 
-  window.location.href = 'mailto:info@viginote.com?subject=' + subject + '&body=' + body;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: '83c5b413-9837-4b88-8b23-6cb96d096978',
+        subject: 'Viginote Enquiry' + (svc ? ' — ' + svc : ''),
+        from_name: name,
+        name: name,
+        organisation: org || 'Not provided',
+        service: svc || 'Not specified',
+        message: desc,
+        botcheck: ''
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      btn.textContent = '✓ Enquiry Sent';
+      btn.style.background = '#22c55e';
+      form.querySelector('input[placeholder="Full name"]').value = '';
+      form.querySelector('input[placeholder="Company or institution"]').value = '';
+      form.querySelector('select').selectedIndex = 0;
+      form.querySelector('textarea').value = '';
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch(e) {
+    btn.disabled = false;
+    btn.textContent = 'Submit Enquiry';
+    alert('Something went wrong. Please email us directly at info@viginote.com');
+  }
 }
 
 // Subtle nav active state on scroll
