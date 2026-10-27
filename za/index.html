@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VigiNote ZA — South Africa, briefed daily</title>
+<meta name="description" content="A daily, sourced briefing on South Africa: crime, government, Parliament, courts, services and the economy. Summaries link to the original reports.">
+<style>
+:root{--bg:#0b1220;--card:#121b2e;--ink:#eef2f9;--mut:#93a0b8;--line:#22304a;--acc:#6aa0ff}
+@media (prefers-color-scheme:light){:root{--bg:#f6f7f9;--card:#fff;--ink:#121a2b;--mut:#5d6b82;--line:#e1e5ec;--acc:#0b5fff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.brand{font-weight:800;letter-spacing:.05em;padding:22px 0}.brand span{color:var(--acc)}
+h1{font-size:clamp(2rem,6vw,3.2rem);line-height:1.1;margin:40px 0 14px}
+p.lead{font-size:1.15rem;color:var(--mut);max-width:620px}
+.cta{display:inline-block;background:var(--acc);color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;margin:22px 10px 0 0}
+.cta.alt{background:none;border:1px solid var(--line);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:50px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}.card h3{margin:0 0 6px;font-size:1.05rem}.card p{margin:0;color:var(--mut);font-size:.95rem}
+h2{margin-top:50px}ul{color:var(--mut)}li{margin:6px 0}
+footer{border-top:1px solid var(--line);color:var(--mut);font-size:.88rem;padding:26px 0 50px;margin-top:50px}
+</style></head><body><div class="wrap">
+<div class="brand">VIGINOTE <span>ZA</span></div>
+<h1>South Africa, briefed daily.</h1>
+<p class="lead">What happened, where, and why it matters: crime, government, Parliament, courts, services and the economy. Pulled from official and public sources, ranked, checked by a person, and linked back to the original report.</p>
+<a class="cta" id="open" href="#">Read today's briefing</a><a class="cta alt" href="#how">How it works</a>
+
+<div class="grid">
+<div class="card"><h3>Crime &amp; safety</h3><p>Police statements and verified incident reports, by province and city.</p></div>
+<div class="card"><h3>Government &amp; Parliament</h3><p>Who is doing what: ministers, committees, bills and hearings.</p></div>
+<div class="card"><h3>Courts &amp; corruption</h3><p>Judgments, prosecutions, Auditor-General and Public Protector findings.</p></div>
+<div class="card"><h3>Services</h3><p>Power, water, roads and municipal notices that affect your day.</p></div>
+<div class="card"><h3>Economy &amp; trade</h3><p>Rates, the rand, fuel, ports, mining and freight.</p></div>
+<div class="card"><h3>Every source shown</h3><p>See exactly where each story comes from and how confident we are.</p></div>
+</div>
+
+<h2 id="how">How it works</h2>
+<ul>
+<li>Around 50 South African sources are checked continuously: government, Parliament (PMG), the police service, courts, municipalities and newsrooms.</li>
+<li>Each story is sorted by topic and place, and ranked by how many people it affects.</li>
+<li>A person approves what is published. Nothing goes out unreviewed.</li>
+<li>You get a headline, a short summary and a link to the original publisher. We never copy articles.</li>
+<li>Mistakes are corrected publicly.</li>
+</ul>
+<footer>VigiNote ZA · Not legal, safety or financial advice. In an emergency call 10111, or 112 from a cell phone.</footer>
+</div>
+<script>
+// Set this to wherever the Render service is served (e.g. https://intel.viginote.com).
+const APP_URL = "https://intel.viginote.com";
+document.getElementById("open").href = APP_URL + "/za";
+</script></body></html>
